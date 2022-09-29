@@ -70,19 +70,19 @@ console.log(factorial(5));
 
 /* #5 Write a JavaScript program that accepts two integers in prompt() and alert the larger one. */
 
-// const larger = () => {
-//   const num1 = window.prompt('Input the first integer', '0');
-//   const num2 = window.prompt('Input the second integer', '0');
+const larger = () => {
+  const num1 = window.prompt('Input the first integer', '0');
+  const num2 = window.prompt('Input the second integer', '0');
 
-//   if (parseInt(num1, 10) > parseInt(num2, 10)) {
-//     alert(`The larger of ${num1} and ${num2} is ${num1}.`);
-//   } else if (parseInt(num2, 10) > parseInt(num1, 10)) {
-//     alert(`The larger of ${num1} and ${num2} is ${num2}.`);
-//   } else {
-//     alert(`The values ${num1} and ${num2} are equal.`);
-//   }
-// };
-// larger();
+  if (parseInt(num1, 10) > parseInt(num2, 10)) {
+    alert(`The larger of ${num1} and ${num2} is ${num1}.`);
+  } else if (parseInt(num2, 10) > parseInt(num1, 10)) {
+    alert(`The larger of ${num1} and ${num2} is ${num2}.`);
+  } else {
+    alert(`The values ${num1} and ${num2} are equal.`);
+  }
+};
+larger();
 
 /* #6 Write a simple JavaScript program to join all elements of the following array into a string */
 
