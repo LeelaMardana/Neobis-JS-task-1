@@ -1,0 +1,60 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+ol {
+  padding: 0;
+}
+
+body {
+  background-color: rgb(222, 150, 49);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+article {
+  max-width: 900px;
+}
+article h3 {
+  text-align: center;
+}
+button {
+  width: 250px;
+  height: 50px;
+  font-size: 25px;
+  background-color: rgb(254, 240, 240);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+button:hover {
+  background-color: rgb(123, 235, 71);
+}
+
+canvas {
+  max-width: 500px;
+}
+
+.task-title {
+  padding: 40px 0 0;
+}
+
+#task-1,
+#task-2,
+#task-3,
+#task-4,
+#task-5,
+#task-6 {
+  padding: 20px 0;
+  max-width: 500px;
+}
+#task-6 {
+  margin-bottom: 300px;
+}
