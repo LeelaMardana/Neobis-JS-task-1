@@ -237,7 +237,6 @@ const sixthTask = () => {
   const start = document.querySelector('.start');
   const list = document.createElement('ul');
   start.after(list);
-
   const render = question => {
     const newAnswer = document.createElement('li');
     newAnswer.textContent = question;
@@ -245,9 +244,11 @@ const sixthTask = () => {
   };
   start.addEventListener('click', () => {
     let newTask;
-    do newTask = prompt('Введите название задачи');
-    while (newTask === null || newTask.trim() === '');
-    render(newTask);
+    do {
+      newTask = prompt('Введите задачу');
+      if (newTask === null || newTask.trim() === '') return;
+      render(newTask);
+    } while (newTask !== null && newTask.trim() !== '');
   });
 };
 sixthTask();
