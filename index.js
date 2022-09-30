@@ -236,7 +236,6 @@ fifthTask();
 const sixthTask = () => {
   const start = document.querySelector('.start');
   const list = document.createElement('ul');
-
   start.after(list);
 
   const render = question => {
@@ -244,27 +243,11 @@ const sixthTask = () => {
     newAnswer.textContent = question;
     list.append(newAnswer);
   };
-
   start.addEventListener('click', () => {
-    const askName = prompt('What is your name?');
-    if (askName === null || askName.trim() === '') return;
-    render(askName);
-
-    const askLastName = prompt('What is your last name?');
-    if (askLastName === null || askLastName.trim() === '') return;
-    render(askLastName);
-
-    const askAge = prompt('How old are you?');
-    if (askAge === null || askAge.trim() === '') return;
-    render(askAge);
-
-    const askLocation = prompt('Where are you from?');
-    if (askLocation === null || askLocation.trim() === '') return;
-    render(askLocation);
-
-    const askAction = prompt('What are you gonna do with your life?');
-    if (askAction === null || askAction.trim() === '') return;
-    render(askAction);
+    let newTask;
+    do newTask = prompt('Введите название задачи');
+    while (newTask === null || newTask.trim() === '');
+    render(newTask);
   });
 };
 sixthTask();
