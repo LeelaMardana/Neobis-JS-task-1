@@ -38,6 +38,10 @@ button:hover {
   background-color: rgb(123, 235, 71);
 }
 
+.start-task-5 {
+  margin-top: 20px;
+}
+
 canvas {
   max-width: 500px;
 }

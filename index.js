@@ -6,15 +6,12 @@ for (var i = 0; i < 10; i++) {
     console.log(i);
   });
 }
-console.log('#1 What will the console display and why?');
-console.log(
-  '#1 var has a global scope. On each iteration of the loop we are dealing with the same variable. The var variable is one for all iterations of the loop and its visible even after the loop. Therefore, console will simply display the number 10 10 times. Сonsequently, for the loop to work correctly, the var variable should be replaced with let'
-);
+
+// setTimeout() - позволяет вызвать функцию один раз через указанный интервал времени.
 /* var has a global scope. On each iteration of the loop we are dealing with the same variable. The var variable is one for all iterations of the loop and its visible even after the loop. Therefore, console will simply display the number 10 10 times. Сonsequently, for the loop to work correctly, the var variable should be replaced with let
  */
 
 /* #2 Write a JavaScript program to display the current day and time in the following format.  */
-
 const newFormatDate = () => {
   const today = new Date();
   const day = today.getDay();
@@ -27,9 +24,6 @@ const newFormatDate = () => {
     'Friday',
     'Saturday',
   ];
-  console.log(
-    '#2 Write a JavaScript program to display the current day and time in the following format.'
-  );
   console.log(`Today is: ${daylist[day]}.`);
 
   let hour = today.getHours();
@@ -60,59 +54,53 @@ const newFormatDate = () => {
 newFormatDate();
 
 // #3 Write a JavaScript function that reverse a number.
-
 const reverseNum = num => {
   return (num = +num.toString().split('').reverse().join(''));
+
+  // split('') разбивает string на массив строк где разделителем является то, что вы указали в скобках.
+  // join('') объединяет все элементы массива в одну строку где разделителем является то, что вы указали в скобках.
 };
-console.log('#3 Write a JavaScript function that reverse a number.');
 console.log(reverseNum(32243));
 
 /* #4 Write a JavaScript program to calculate the factorial of a number. In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.  */
-
 const factorial = n => {
   if (n === 0) {
     return 1;
   }
   return n * factorial(n - 1);
 };
-console.log(
-  '#4 Write a JavaScript program to calculate the factorial of a number. In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.'
-);
 console.log(factorial(5));
 
 /* #5 Write a JavaScript program that accepts two integers in prompt() and alert the larger one. */
-
 const larger = () => {
-  const num1 = window.prompt('Input the first integer', '0');
-  const num2 = window.prompt('Input the second integer', '0');
+  const start = document.querySelector('.start-task-5');
+  start.addEventListener('click', () => {
+    const num1 = window.prompt('Input the first integer', '0');
+    const num2 = window.prompt('Input the second integer', '0');
 
-  console.log(
-    '#5 Write a JavaScript program that accepts two integers in prompt() and alert the larger one.'
-  );
-  if (parseInt(num1, 10) > parseInt(num2, 10)) {
-    alert(`The larger of ${num1} and ${num2} is ${num1}.`);
-  } else if (parseInt(num2, 10) > parseInt(num1, 10)) {
-    alert(`The larger of ${num1} and ${num2} is ${num2}.`);
-  } else {
-    alert(`The values ${num1} and ${num2} are equal.`);
-  }
+    if (parseInt(num1, 10) > parseInt(num2, 10)) {
+      alert(`The larger of ${num1} and ${num2} is ${num1}.`);
+    } else if (parseInt(num2, 10) > parseInt(num1, 10)) {
+      alert(`The larger of ${num1} and ${num2} is ${num2}.`);
+    } else {
+      alert(`The values ${num1} and ${num2} are equal.`);
+    }
+  });
+
+  // parseInt() - выводит только число удаляя при этом все остальные символы, при условии если число написано вначале
 };
 larger();
 
 /* #6 Write a simple JavaScript program to join all elements of the following array into a string */
-
 const arrToString = () => {
-  console.log(
-    '#6 Write a simple JavaScript program to join all elements of the following array into a string'
-  );
   const myColor = ['Red', 'Green', 'White', 'Black'];
   console.log(myColor.join(','));
   console.log(myColor.join('+'));
+  // join('+') объединяет все элементы массива в одну строку где разделителем является то, что вы указали в скобках.
 };
 arrToString();
 
 /* #7 Write a JavaScript function to get the month name from a particular date.  */
-
 const monthName = date => {
   const monthList = [
     'January',
@@ -130,20 +118,18 @@ const monthName = date => {
   ];
   return monthList[new Date(date).getMonth()];
 };
-console.log(
-  '#7 Write a JavaScript function to get the month name from a particular date.'
-);
+
 console.log(monthName('10/11/2009'));
 console.log(monthName('11/13/2014'));
 
 // #8 Write a JavaScript program to test the first character of a string is uppercase or not
-console.log(
-  '#8 Write a JavaScript program to test the first character of a string is uppercase or not'
-);
 const isUppercase = str => {
   /^[A-Z]/.test(str)
     ? console.log('First character is uppercase')
     : console.log('First character is not uppercase');
+
+  // /^[A-Z]/ - первая большая буква в английской раскладке в деапозоне между A-Z
+  // test(str) - проверка строки, где в скобки принимается сама строка
 };
 isUppercase('salo');
 isUppercase('Salo');
@@ -252,6 +238,10 @@ const fifthTask = () => {
     if (item.textContent.match(/Chocolate bar/gi))
       item.parentNode.replaceChild(newElement, item);
   });
+
+  // match() - ищет совпадение в соответствии с указанием в скобках
+  // gi - без учета регистра
+  // g - с учетом регистра
 };
 fifthTask();
 
@@ -273,5 +263,7 @@ const sixthTask = () => {
       render(newTask);
     } while (newTask !== null && newTask.trim() !== '');
   });
+
+  // trim() - убрать пробелы
 };
 sixthTask();
