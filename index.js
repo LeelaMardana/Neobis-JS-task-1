@@ -6,6 +6,9 @@ for (var i = 0; i < 10; i++) {
     console.log(i);
   });
 }
+console.log(
+  'var has a global scope. On each iteration of the loop we are dealing with the same variable. The var variable is one for all iterations of the loop and its visible even after the loop. Therefore, console will simply display the number 10 10 times. Сonsequently, for the loop to work correctly, the var variable should be replaced with let'
+);
 /* var has a global scope. On each iteration of the loop we are dealing with the same variable. The var variable is one for all iterations of the loop and its visible even after the loop. Therefore, console will simply display the number 10 10 times. Сonsequently, for the loop to work correctly, the var variable should be replaced with let
  */
 
